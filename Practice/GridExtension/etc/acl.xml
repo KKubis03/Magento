@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Acl/etc/acl.xsd">
+    <acl>
+        <resources>
+            <resource id="Magento_Backend::admin">
+                <resource id="_GridExtension::main" title="Grid Extension" sortOrder="10">
+                    <resource id="_GridExtension::mass_custom" title="Mass Custom Action" />
+                </resource>
+            </resource>
+        </resources>
+    </acl>
+</config>

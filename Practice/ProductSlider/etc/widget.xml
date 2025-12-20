@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<widgets xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="urn:magento:framework:Widget/etc/widget.xsd">
+    <widget id="_product_slider" class="\ProductSlider\Block\Widget\Slider">
+        <label translate="true">Product Slider</label>
+        <description translate="true">Wyświetla slider produktów z wybranej kategorii</description>
+        <parameters>
+            <parameter name="title" xsi:type="text" required="true" sort_order="10" visible="true">
+                <label translate="true">Tytuł slidera</label>
+            </parameter>
+            <parameter name="category_id" xsi:type="text" required="true" sort_order="20" visible="true">
+                <label translate="true">Kategoria</label>
+            </parameter>
+            <parameter name="product_count" xsi:type="text" required="true" sort_order="30" visible="true">
+                <label translate="true">Liczba produktów</label>
+                <value>5</value>
+            </parameter>
+        </parameters>
+    </widget>
+</widgets>

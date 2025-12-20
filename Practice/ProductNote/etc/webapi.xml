@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Webapi/etc/webapi.xsd">
+    <route url="/V1/productNote/:sku" method="GET">
+        <service class="\ProductNote\Api\ProductNoteRepositoryInterface" method="getBySku"/>
+        <resources>
+            <resource ref="Magento_Catalog::products" />
+        </resources>
+    </route>
+
+    <route url="/V1/productNote" method="POST">
+        <service class="\ProductNote\Api\ProductNoteRepositoryInterface" method="create"/>
+        <resources>
+            <resource ref="Magento_Catalog::products" />
+        </resources>
+    </route>
+
+    <route url="/V1/productNote/:sku" method="PUT">
+        <service class="\ProductNote\Api\ProductNoteRepositoryInterface" method="update"/>
+        <resources>
+            <resource ref="Magento_Catalog::products" />
+        </resources>
+    </route>
+
+    <route url="/V1/productNote/:sku" method="DELETE">
+        <service class="\ProductNote\Api\ProductNoteRepositoryInterface" method="delete"/>
+        <resources>
+            <resource ref="Magento_Catalog::products" />
+        </resources>
+    </route>
+</routes>

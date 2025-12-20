@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Magento\Catalog\Model\Product">
+        <plugin name="product_name_prefix_before_plugin"
+                type="ProductNamePrefix\Plugin\ProductBeforePlugin"
+                disabled="false"
+                sortOrder="1"/>
+        <plugin name="product_name_prefix_after_plugin"
+                type="ProductNamePrefix\Plugin\ProductAfterPlugin"
+                disabled="true"/>
+        <plugin name="product_name_prefix_around_plugin"
+                type="ProductNamePrefix\Plugin\ProductAroundPlugin"
+                disabled="true"/>
+    </type>
+</config>

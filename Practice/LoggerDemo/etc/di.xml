@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="\LoggerDemo\Logger\Logger">
+        <arguments>
+            <argument name="name" xsi:type="string">demo</argument>
+            <argument name="customerSession" xsi:type="object">Magento\Customer\Model\Session</argument>
+            <argument name="handlers" xsi:type="array">
+                <item name="system" xsi:type="object">\LoggerDemo\Logger\Handler</item>
+            </argument>
+        </arguments>
+    </type>
+    <type name="Magento\Framework\DB\Adapter\Pdo\Mysql">
+        <arguments>
+            <argument name="profiler" xsi:type="object">Magento\Framework\DB\Profiler</argument>
+        </arguments>
+    </type>
+</config>

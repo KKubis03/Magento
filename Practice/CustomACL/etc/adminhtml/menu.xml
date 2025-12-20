@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="CustomACL::main_menu"
+             title="Custom ACL Example"
+             module="CustomACL"
+             sortOrder="100"
+             parent="Magento_Backend::content"
+             action="customAcl/example/index"
+             resource="CustomACL::example"/>
+    </menu>
+</config>

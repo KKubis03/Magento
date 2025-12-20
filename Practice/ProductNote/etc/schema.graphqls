@@ -1,0 +1,20 @@
+type Query {
+  productNote(sku: String!): ProductNote
+    @resolver(class: "\\ProductNote\\Model\\Resolver\\GetBySku")
+}
+
+type Mutation {
+  createProductNote(sku: String!, note: String!): ProductNote
+    @resolver(class: "\\ProductNote\\Model\\Resolver\\Create")
+
+  updateProductNote(sku: String!, note: String!): ProductNote
+    @resolver(class: "\\ProductNote\\Model\\Resolver\\Update")
+
+  deleteProductNote(sku: String!): Boolean
+    @resolver(class: "\\ProductNote\\Model\\Resolver\\Delete")
+}
+
+type ProductNote {
+  sku: String!
+  note: String!
+}

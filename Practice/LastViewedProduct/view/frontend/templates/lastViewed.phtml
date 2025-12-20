@@ -1,0 +1,23 @@
+<?php
+
+use \LastViewedProduct\Block\LastViewedProduct;
+
+/** @var LastViewedProduct $block */
+
+$product = $block->getLastViewedProduct();
+?>
+
+<?php if ($product): ?>
+    <div class="last-viewed-product">
+        <h3><?= $block->escapeHtml(__('Last viewed product:')) ?></h3>
+        <a href="<?= $block->escapeUrl($product->getProductUrl()) ?>">
+            <?= $block->escapeHtml($product->getName()) ?>
+        </a>
+        <p>
+            <?= $block->escapeHtml(__('Price:')) ?>
+            <?= $block->escapeHtml($product->getFinalPrice()) ?> $
+        </p>
+    </div>
+<?php else: ?>
+    <p><?= $block->escapeHtml(__('No last viewed product.')) ?></p>
+<?php endif; ?>

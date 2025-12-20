@@ -1,0 +1,10 @@
+type Query {
+  productInfo(sku: String!): ProductInfo
+    @resolver(class: "\ProductInfoGraphql\\Model\\Resolver\\ProductInfo")
+}
+
+type ProductInfo {
+  name: String
+  price: Float
+  status: Int
+}

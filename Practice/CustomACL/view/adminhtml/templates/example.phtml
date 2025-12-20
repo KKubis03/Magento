@@ -1,0 +1,11 @@
+<?php
+
+/** @var AccessControl $block */
+
+use CustomACL\Block\AccessControl;
+
+?>
+
+<h1><?= $block->getTitle() ?></h1>
+<p>If you see this page you have valid ACL: <code><?= $block->getAclCode() ?></code></p>
+

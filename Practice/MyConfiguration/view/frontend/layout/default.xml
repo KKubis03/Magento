@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="footer">
+            <block class="\MyConfiguration\Block\ConfigurationBlock"
+                   name="custom_message"
+                   template="_MyConfiguration::message.phtml"
+                   after="footer_links" />
+        </referenceContainer>
+    </body>
+</page>

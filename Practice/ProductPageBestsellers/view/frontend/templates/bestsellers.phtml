@@ -1,0 +1,25 @@
+<?php
+/** @var Bestsellers $viewModel */
+
+use ProductPageBestsellers\ViewModel\Bestsellers;
+
+$viewModel = $block->getViewModel();
+$products = $viewModel->getTopSellingProducts();
+
+if (!empty($products)): ?>
+    <div class="bestsellers-block">
+        <h2><?= __('BestSellers in this category') ?></h2>
+        <ul class="bestsellers-list">
+            <?php foreach ($products as $product): ?>
+                <li>
+                    <a href="<?= $product->getProductUrl() ?>">
+                        <p>
+                            <?= $block->escapeHtml($product->getName()) ?>
+                            <?= $block->escapeHtml(number_format($product->getPrice(), 2, ',', '')) ?> <?= __('$') ?>
+                        </p>
+                    </a>
+                </li>
+            <?php endforeach; ?>
+        </ul>
+    </div>
+<?php endif; ?>

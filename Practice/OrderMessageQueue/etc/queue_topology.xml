@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework-message-queue:etc/topology.xsd">
+    <exchange name="order.export" type="topic" connection="amqp">
+        <binding id="order.export.binding" topic="order.export" destinationType="queue" destination="order.export.queue">
+            <arguments>
+                <argument name="x-dead-letter-exchange" xsi:type="string">dead_letter_exchange</argument>
+            </arguments>
+        </binding>
+    </exchange>
+</config>

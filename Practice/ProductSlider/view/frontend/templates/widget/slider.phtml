@@ -1,0 +1,37 @@
+<?php
+
+/** @var Slider $block */
+
+use ProductSlider\Block\Widget\Slider;
+
+$products = $block->getProducts();
+$title = $block->getTitle();
+?>
+<div class="product-slider-widget">
+    <?php if ($title): ?>
+        <h2><?= $block->escapeHtml($title) ?></h2>
+    <?php endif; ?>
+
+    <?php if ($products->getSize()): ?>
+        <div class="slider" data-mage-init='{"_ProductSlider/js/slider-init": {"slidesToShow": 3}}'>
+            <?php foreach ($products as $product): ?>
+                <?php
+                /** @var \Magento\Catalog\Model\Product $product */
+                $imageUrl = $block->getImageUrl($product);
+                ?>
+                <div class="slide-item">
+                    <a href="<?= $block->escapeUrl($product->getProductUrl()) ?>">
+                        <img src="<?= $block->escapeUrl($imageUrl) ?>"
+                             alt="<?= $block->escapeHtmlAttr($product->getName()) ?>" />
+                        <p><?= $block->escapeHtml($product->getName()) ?></p>
+                        <span><?= /* format final price */ $block->formatPrice((float)$product->getFinalPrice()) ?></span>
+                    </a>
+                </div>
+            <?php endforeach; ?>
+        </div>
+    <?php else: ?>
+        <div class="slider-empty">
+            <p><?= $block->escapeHtml(__('Brak produktów do wyświetlenia.')) ?></p>
+        </div>
+    <?php endif; ?>
+</div>

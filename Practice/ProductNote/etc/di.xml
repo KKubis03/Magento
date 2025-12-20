@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Magento\Catalog\Api\ProductRepositoryInterface">
+        <plugin name="productnote_add_note_to_product"
+                type="ProductNote\Plugin\AddNoteToProduct" />
+    </type>
+    <preference for="ProductNote\Api\ProductNoteRepositoryInterface"
+                type="ProductNote\Model\ProductNoteRepository" />
+</config>

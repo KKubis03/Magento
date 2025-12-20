@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+
+    <preference for="Magento\Catalog\Block\Product\View"
+                type="PreferencesExamples\Block\CustomView" />
+
+    <preference for="Magento\Framework\Pricing\Helper\Data"
+                type="PreferencesExamples\Helper\Price" />
+
+    <preference for="Magento\Catalog\Model\ResourceModel\Product"
+                type="PreferencesExamples\Model\ResourceModel\Product" />
+
+    <preference for="Magento\Catalog\Model\ResourceModel\Product\Collection"
+                type="PreferencesExamples\Model\ResourceModel\Product\Collection" />
+
+    <preference for="Magento\Cms\Controller\Index\Index"
+                type="PreferencesExamples\Controller\Index\Index" />
+
+    <preference for="Magento\Backend\Controller\Adminhtml\Dashboard\Index"
+                type="PreferencesExamples\Controller\Adminhtml\Dashboard\Index" />
+
+</config>
